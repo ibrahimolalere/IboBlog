@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import Blogs from './components/Blogs';
+import Blog from './components/Blog';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BrowserRouter>
+
+      <Routes>
+
+      <Route path="/" element={<Home/>}/>
+      <Route path="/signin" element={<SignIn/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/blogs" element={<Blogs/>}/>
+    <Route path="/blog/:blogId" element={<Blog/>}/>
+
+      </Routes>
+    </BrowserRouter> 
+      
     </div>
   );
 }
 
 export default App;
+
+
+
+//1. create routes
+//2. create the components and import in app.js
+//3. I had issues -compilling errors. and in the end discivered I needed to import browser router and wrap it arround the routes
+
