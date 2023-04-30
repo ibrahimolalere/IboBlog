@@ -19,13 +19,26 @@ const Home = () => {
       },[]); 
 
 
-    return ( <div>
-        <h1>My Personal Blog</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, mollitia. Libero soluta perferendis iure eos velit eius magni ipsam molestiae officiis, error explicabo in eum impedit alias placeat ea cupiditate?</p>
+    return ( <div className="hero-container ">
+      <div className="container-center">
+
+      <div className="hero mx-auto text-center">
+
+        <h1 className="fs-1 fw-bold">My Personal Blog</h1>
+        <p>
+        A subheading that addresses the what, the why we should care and hopefully some social proof.
+        </p>
+      </div>
+      </div>
         
-      { isLoggedIn?<BlogsListView blogs={blogs}/>: <Link to= "/signin">
-        <button>Sign in to read</button>
-        </Link>}
+      { isLoggedIn?<BlogsListView blogs={blogs}/>: 
+      <div className="mx-auto w-ft">
+
+      <Link  to= "/signin">
+        <button className="btn btn-primary">Sign in to read</button>
+        </Link>
+      </div>
+        }
 
 
     </div> );
