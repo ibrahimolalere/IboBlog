@@ -1,0 +1,67 @@
+.container{
+text-decoration: none;
+}
+.blogPreviewImage{
+height: 216px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+border-radius: 6px;
+background-color: rgb(169, 169, 191);
+margin-bottom: 24px;
+}
+.blogTitle{
+    font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 32px;
+color: #171717;
+margin-bottom: 8px;
+height: 70px;
+overflow:hidden;
+
+}
+.blogContent{
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+height: 50px;
+color: #737373;
+margin-bottom: 24px;
+overflow: hidden;
+}
+.blogFooter{
+
+}
+.authorAvatar{
+    margin-right: 12px;
+}
+
+.authorAvatar img{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+}
+.authorName{
+    font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+
+
+color: #171717;
+}
+.dateAdded{
+    font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+
+/* Neutral/500 */
+
+color: #737373;
+
+}
