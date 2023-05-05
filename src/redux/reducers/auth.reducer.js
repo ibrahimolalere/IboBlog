@@ -6,10 +6,7 @@ import {
   LOGOUT,
 } from "../actions/types";
 
-const user = JSON.parse(localStorage.getItem("user"));
-const initialState = user
-  ? { isLoggedIn: true, user }
-  : { isLoggedIn: false, user: null };
+const initialState = { isLoggedIn: true, user: null };
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = initialState, action) {
@@ -18,8 +15,8 @@ export default function (state = initialState, action) {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        isLoggedIn: true,
-        user: payload.user,
+        isLoggedIn: payload ? true : false,
+        user: payload,
       };
     case LOGIN_FAIL:
       return {
