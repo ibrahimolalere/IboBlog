@@ -14,9 +14,15 @@ const NavBar = () => {
             </Link>
             {
                 isLoggedIn?
-               
-                <button className={styles.signup+" btn"}>Logout</button>:
                 <div className="d-flex">
+                    <button className={styles.signup+"me-2 btn"}>Logout</button>
+                <Link  to= "/blogs/create" className="me-2">
+
+                    <button className={styles.signin+" btn"}>New Blog</button>
+</Link>
+                </div>
+               
+:                <div className="d-flex">
 
                 <Link  to= "/signup" className="me-2">
                 <button className={styles.signup+" btn"}>Sign Up</button>
