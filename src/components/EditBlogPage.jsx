@@ -37,7 +37,7 @@ const EditBlogPage = () => {
     return ( <div className={styles.container}>
         <div className={styles.formHeader}>
             <h5>
-                Edit Form
+                Edit Blog
             </h5>
         </div>
         <BlogForm buttonTitle={"Update"} formData={formData} onFormInputChanged={(e)=>{

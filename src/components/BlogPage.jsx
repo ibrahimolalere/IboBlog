@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { BlogAction } from "../redux/actions/blog.action";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from '../styles/BlogPage.module.css'
 
 const BlogPage = () => {
     const dispatch = useDispatch();
     let { blogId } = useParams();
+    const navigate = useNavigate();
 
     const [blog,setBlog] = useState({});
+const deletePost=async()=>{
+    await dispatch(BlogAction.deleteBlog(blogId));
+  navigate("/blogs");
 
+}
     const fetchSingleBlog = async ()=>{
       const data = await dispatch(BlogAction.fetchSingleBlog(blogId));
 console.log(data)
@@ -35,7 +40,7 @@ console.log(data)
             <div className={styles.footer}>
             <div> 
             <Link to={'/blogs/'+blog.id+'/edit'}>
-                <button className={styles.editButton+" btn me-2"}>Edit</button></Link>  <button className={styles.deleteButton+" btn"}>Delete Post</button></div>
+                <button className={styles.editButton+" btn me-2"}>Edit</button></Link>  <button onClick={deletePost} className={styles.deleteButton+" btn"}>Delete Post</button></div>
             </div>
         </div>
     )

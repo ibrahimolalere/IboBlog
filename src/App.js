@@ -7,6 +7,9 @@ import Blog from "./components/BlogPage";
 import Auth from "./components/layout/Auth";
 import NavBar from "./components/utils/NavBar";
 import Default from "./components/layout/Default";
+import EditPlogPage from "./components/EditBlogPage";
+import EditBlogPage from "./components/EditBlogPage";
+import CreateBlogPage from "./components/CreateBlogPage";
 
 function App() {
   return (
@@ -39,6 +42,26 @@ function App() {
               <Default>
                 <Auth>
                   <Blog />
+                </Auth>
+              </Default>
+            }
+          />
+          <Route
+            path="/blogs/:blogId/edit"
+            element={
+              <Default>
+                <Auth>
+                  <EditBlogPage />
+                </Auth>
+              </Default>
+            }
+          />
+          <Route
+            path="/blogs/create"
+            element={
+              <Default>
+                <Auth>
+                  <CreateBlogPage />
                 </Auth>
               </Default>
             }

@@ -15,8 +15,8 @@ const NavBar = () => {
             {
                 isLoggedIn?
                 <div className="d-flex">
-                    <button className={styles.signup+"me-2 btn"}>Logout</button>
-                <Link  to= "/blogs/create" className="me-2">
+                    <button className={styles.signup+" me-2 btn"}>Logout</button>
+                <Link  to= "/blogs/create" className="">
 
                     <button className={styles.signin+" btn"}>New Blog</button>
 </Link>
