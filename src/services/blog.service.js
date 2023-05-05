@@ -26,7 +26,7 @@ export default class BlogService {
   };
   static createBlog = async (data) => {
     return await api
-      .put(`/blogs`, data)
+      .post(`/blogs`, data)
       .then((data) => data.data)
       .catch((err) => {});
   };

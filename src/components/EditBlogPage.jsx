@@ -14,6 +14,9 @@ const EditBlogPage = () => {
         title:"",
         content:""
     })
+    const updateBlog = async ()=>{
+        await dispatch(BlogAction.updateBlog(blogId,formData));
+      }
     const fetchSingleBlog = async ()=>{
         const data = await dispatch(BlogAction.fetchSingleBlog(blogId));
   console.log(data)
@@ -28,9 +31,7 @@ const EditBlogPage = () => {
          return;
       },[]);
 
-    const updateBlog = async (data)=>{
-        await dispatch(BlogAction.updateBlog(blogId,data));
-      }
+
   
 
     return ( <div className={styles.container}>
@@ -51,7 +52,7 @@ const EditBlogPage = () => {
         }}
         onSubmit={(e)=>{
             e.preventDefault();
-            updateBlog(formData);
+            updateBlog();
         }} 
         />
     </div> );

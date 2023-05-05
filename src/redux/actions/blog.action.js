@@ -9,4 +9,13 @@ export class BlogAction {
   static fetchSingleBlog = (id) => async (dispatch) => {
     return await BlogService.fetchSingleBlog(id).catch((err) => {});
   };
+  static createBlog = (data) => async (dispatch) => {
+    return await BlogService.createBlog(data).catch((err) => {});
+  };
+  static updateBlog = (id, data) => async (dispatch) => {
+    return await BlogService.updateBlog(id, data).catch((err) => {});
+  };
+  static deleteBlog = (id) => async (dispatch) => {
+    return await BlogService.deleteBlog(id).catch((err) => {});
+  };
 }

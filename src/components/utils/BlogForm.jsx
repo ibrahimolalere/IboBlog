@@ -1,4 +1,4 @@
-
+import styles from '../../styles/BlogForm.module.css'
 const BlogForm = ({formData:{title,content},onFormInputChanged,onSubmit,buttonTitle}) => {
     return ( <div>
         <form onSubmit={onSubmit}>
@@ -13,7 +13,7 @@ const BlogForm = ({formData:{title,content},onFormInputChanged,onSubmit,buttonTi
 </div>
 
 <div>
-    <button className="btn btn-primary" type="submit">{buttonTitle}</button>
+    <button className={styles.button+" btn w-100"} type="submit">{buttonTitle}</button>
 </div>
         </form>
     </div> );
