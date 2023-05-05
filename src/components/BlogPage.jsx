@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { BlogAction } from "../redux/actions/blog.action";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import styles from '../styles/BlogPage.module.css'
 
 const BlogPage = () => {
     const dispatch = useDispatch();
@@ -20,16 +21,25 @@ console.log(data)
        return;
     },[]);
     return (
-         <div>
-        <h1>Blog</h1>
-        <div>
+        <div className={styles.container}>
+            <div className={styles.avatar} style={{backgroundImage:`url("${blog.avatar}")`}}>
+            </div>
+            <div className={styles.body}>
+                <div className={styles.title}><h5>
+                {blog.title}
+                    </h5></div>
+                <div className={styles.content}><p>{blog.content}
+                    </p></div>
 
-        <div>{blog.title}</div>
-        <div>{blog.content}</div>
-        <div>{blog.author}</div>
+            </div>
+            <div className={styles.footer}>
+            <div> 
+            <Link to={'/blogs/'+blog.id+'/edit'}>
+                <button className={styles.editButton+" btn me-2"}>Edit</button></Link>  <button className={styles.deleteButton+" btn"}>Delete Post</button></div>
+            </div>
         </div>
-    </div>
-     );
+    )
+   
 }
  
 export default BlogPage;
