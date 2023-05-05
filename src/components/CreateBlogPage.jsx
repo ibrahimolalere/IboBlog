@@ -4,8 +4,10 @@ import { BlogAction } from "../redux/actions/blog.action";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const CreateBlogPage = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         title:"",
@@ -13,6 +15,7 @@ const CreateBlogPage = () => {
     })
     const createBlog = async ()=>{
         await dispatch(BlogAction.createBlog(formData));
+        navigate("/blogs")
       }
     return ( <div className={styles.container}>
         <div className={styles.formHeader}>

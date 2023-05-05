@@ -4,18 +4,19 @@ import { BlogAction } from "../redux/actions/blog.action";
 
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const EditBlogPage = () => {
     const dispatch = useDispatch();
     let { blogId } = useParams();
-
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         title:"",
         content:""
-    })
+    });
     const updateBlog = async ()=>{
         await dispatch(BlogAction.updateBlog(blogId,formData));
+        navigate("/blogs")
       }
     const fetchSingleBlog = async ()=>{
         const data = await dispatch(BlogAction.fetchSingleBlog(blogId));

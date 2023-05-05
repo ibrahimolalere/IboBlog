@@ -9,7 +9,7 @@ const BlogForm = ({formData:{title,content},onFormInputChanged,onSubmit,buttonTi
 </div>
 <div className="mb-3">
   <label htmlFor="content" className="form-label">Content</label>
-  <textarea className="form-control" value={content} name="content" id="content" onChange={onFormInputChanged} placeholder="Blog content" rows="3"></textarea>
+  <textarea className="form-control" value={content} name="content" id="content" onChange={onFormInputChanged} placeholder="Blog content" rows="7"></textarea>
 </div>
 
 <div>
